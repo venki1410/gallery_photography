@@ -9,17 +9,16 @@ class MobileView extends StatelessWidget {
       body: CustomScrollView(
         slivers: <Widget>[
           SliverAppBar(
-            leading: IconButton(
-              icon: Icon(
-                Icons.menu,
-              ),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Menu()),
-                );
-              },
-            ),
+            actions: <Widget>[
+              //IconButton
+              IconButton(
+                  icon: Icon(Icons.menu),
+                  tooltip: 'Menu',
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Menu()));
+                  }), //IconButton
+            ],
             floating: true,
             backgroundColor: Colors.grey[50],
             expandedHeight: 50,
