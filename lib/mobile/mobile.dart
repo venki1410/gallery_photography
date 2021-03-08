@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:karthikha_photography/gallery.dart';
 import '../menu.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class MobileView extends StatelessWidget {
   @override
@@ -26,10 +27,9 @@ class MobileView extends StatelessWidget {
             flexibleSpace: FlexibleSpaceBar(
               title: Text(
                 "Karthikha Photography",
-                style: TextStyle(
-                  fontStyle: FontStyle.italic,
-                  fontFamily: 'Open Sans',
-                ),
+                style: GoogleFonts.sacramento(
+                    //textStyle: TextStyle(letterSpacing: .5),
+                    ),
               ),
               centerTitle: true,
             ),
