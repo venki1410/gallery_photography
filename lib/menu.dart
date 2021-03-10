@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Menu extends StatelessWidget {
   @override
@@ -23,12 +24,12 @@ class Menu extends StatelessWidget {
       body: Center(
         child: Column(
           children: <Widget>[
-            _buildContent("Wedding"),
-            _buildContent("Model Shoot"),
-            _buildContent("Baby"),
-            _buildContent("Birthday Party"),
-            _buildContent("Product"),
-            _buildContent("Maternity Shoot"),
+            _buildContent("WEDDING"),
+            _buildContent("MODEL SHOOT"),
+            _buildContent("BABY"),
+            _buildContent("BIRTHDAY PARTY"),
+            _buildContent("PRODUCT"),
+            _buildContent("PRODUCT"),
           ],
         ),
       ),
@@ -42,7 +43,7 @@ class Menu extends StatelessWidget {
         title: Center(
           child: Text(
             item,
-            style: TextStyle(
+            style: GoogleFonts.gudea(
               fontSize: 25,
               color: Colors.grey[600],
               fontWeight: FontWeight.w500,
