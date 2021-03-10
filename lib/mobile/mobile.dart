@@ -3,7 +3,13 @@ import 'package:karthikha_photography/gallery.dart';
 import '../menu.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class MobileView extends StatelessWidget {
+class MobileView extends StatefulWidget {
+  @override
+  _MobileViewState createState() => _MobileViewState();
+}
+
+class _MobileViewState extends State<MobileView> {
+  final String folderName = 'babby';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +41,9 @@ class MobileView extends StatelessWidget {
             ),
           ),
           SliverFillRemaining(
-            child: Gallery(),
+            child: Gallery(
+              location: folderName,
+            ),
           )
         ],
       ),

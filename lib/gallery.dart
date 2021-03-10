@@ -5,7 +5,9 @@ import 'package:flutter/material.dart';
 import 'image_preview.dart';
 
 class Gallery extends StatelessWidget {
-  const Gallery({Key key}) : super(key: key);
+  final String location;
+
+  const Gallery({Key key, @required this.location}) : super(key: key);
 
   BuildContext get context => null;
 
@@ -13,6 +15,7 @@ class Gallery extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print(location);
     return FutureBuilder(
       future: _loadImagePaths(context),
       builder: (
@@ -61,7 +64,7 @@ class Gallery extends StatelessWidget {
     final Map<String, dynamic> manifestMap = json.decode(manifestContentJson);
 
     return manifestMap.keys
-        .where((String key) => key.contains('assets/images/'))
+        .where((String key) => key.contains('assets/' + location + '/'))
         .toList();
   }
 
