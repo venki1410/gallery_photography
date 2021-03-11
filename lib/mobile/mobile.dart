@@ -16,37 +16,36 @@ class _MobileViewState extends State<MobileView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: CustomScrollView(
-        slivers: <Widget>[
-          SliverAppBar(
-            title: MyAppBar(),
-            actions: <Widget>[
-              //IconButton
-              IconButton(
-                  icon: Icon(Icons.menu),
-                  tooltip: 'Menu',
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Menu()));
-                  }), //IconButton
-            ],
-            floating: true,
-            backgroundColor: Colors.grey[100],
-            expandedHeight: 280.0,
-            pinned: true,
-            flexibleSpace: FlexibleSpaceBar(
-              background: MyFlexiableAppBar(),
-              centerTitle: true,
+      body: NestedScrollView(
+        physics: NeverScrollableScrollPhysics(),
+        headerSliverBuilder: (context, isScolled) {
+          return [
+            SliverAppBar(
+              title: MyAppBar(),
+              actions: <Widget>[
+                //IconButton
+                IconButton(
+                    icon: Icon(Icons.menu),
+                    tooltip: 'Menu',
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Menu()));
+                    }), //IconButton
+              ],
+              floating: true,
+              backgroundColor: Colors.grey[100],
+              expandedHeight: 280.0,
+              pinned: true,
+              flexibleSpace: FlexibleSpaceBar(
+                background: MyFlexiableAppBar(),
+                centerTitle: true,
+              ),
             ),
-          ),
-          SliverList(
-              delegate: SliverChildListDelegate(<Widget>[Text("HIIII")])),
-          SliverFillRemaining(
-            child: Gallery(
-              location: folderName,
-            ),
-          )
-        ],
+          ];
+        },
+        body: Gallery(
+          location: folderName,
+        ),
       ),
     );
   }

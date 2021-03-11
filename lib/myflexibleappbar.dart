@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:getwidget/getwidget.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MyFlexiableAppBar extends StatelessWidget {
   final double appBarHeight = 66.0;
@@ -43,20 +43,42 @@ class MyFlexiableAppBar extends StatelessWidget {
                 Container(
                   child: Padding(
                     padding: const EdgeInsets.only(bottom: 16.0),
-                    child: Icon(
-                      FontAwesomeIcons.instagram,
-                      color: Colors.black54,
-                      size: 40,
+                    child: InkWell(
+                      onTap: () async {
+                        const url =
+                            "https://www.instagram.com/karthikha_photography/?hl=en";
+                        if (await canLaunch(url)) {
+                          await launch(url);
+                        } else {
+                          throw 'Could not launch $url';
+                        }
+                      },
+                      child: Icon(
+                        FontAwesomeIcons.instagram,
+                        color: Colors.black54,
+                        size: 40,
+                      ),
                     ),
                   ),
                 ),
                 Container(
                   child: Padding(
                     padding: const EdgeInsets.only(bottom: 16.0),
-                    child: Icon(
-                      FontAwesomeIcons.youtube,
-                      color: Colors.black54,
-                      size: 40,
+                    child: InkWell(
+                      onTap: () async {
+                        const url =
+                            "https://www.youtube.com/channel/UCDkNhB_E8f8KX0SfqPLJTDg";
+                        if (await canLaunch(url)) {
+                          await launch(url);
+                        } else {
+                          throw 'Could not launch $url';
+                        }
+                      },
+                      child: Icon(
+                        FontAwesomeIcons.youtube,
+                        color: Colors.black54,
+                        size: 40,
+                      ),
                     ),
                   ),
                 ),

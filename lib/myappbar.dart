@@ -18,8 +18,8 @@ class MyAppBar extends StatelessWidget {
               padding: const EdgeInsets.all(16.0),
               child: Text(
                 '       Karthikha Photography',
-                style: GoogleFonts.sacramento(
-                  fontSize: 30,
+                style: GoogleFonts.charmonman(
+                  fontSize: 20,
                 ),
               ),
             ),
