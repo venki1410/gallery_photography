@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:karthikha_photography/gallery.dart';
 import 'package:karthikha_photography/myappbar.dart';
 import '../menu.dart';
@@ -13,11 +14,16 @@ class MobileView extends StatefulWidget {
 
 class _MobileViewState extends State<MobileView> {
   final String folderName = 'images';
+  final imageList = [
+    'assets/images/55.jpeg',
+    'assets/images/66.jpeg',
+    'assets/images/i.jpeg',
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: NestedScrollView(
-        physics: NeverScrollableScrollPhysics(),
+        physics: BouncingScrollPhysics(),
         headerSliverBuilder: (context, isScolled) {
           return [
             SliverAppBar(

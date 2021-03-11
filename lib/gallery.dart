@@ -24,6 +24,7 @@ class Gallery extends StatelessWidget {
       ) {
         if (imagePathsSnapshot.connectionState == ConnectionState.done &&
             imagePathsSnapshot.hasData) {
+          // print(imagePathsSnapshot);
           return CustomScrollView(
             slivers: <Widget>[
               SliverPadding(
