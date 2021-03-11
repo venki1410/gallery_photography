@@ -23,6 +23,7 @@ class Menu extends StatelessWidget {
       ),
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             _buildContent("WEDDING"),
             _buildContent("MODEL SHOOT"),

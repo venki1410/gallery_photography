@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:karthikha_photography/gallery.dart';
+import 'package:karthikha_photography/myappbar.dart';
 import '../menu.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import '../myflexibleappbar.dart';
 
 class MobileView extends StatefulWidget {
   @override
@@ -9,13 +12,14 @@ class MobileView extends StatefulWidget {
 }
 
 class _MobileViewState extends State<MobileView> {
-  final String folderName = 'babby';
+  final String folderName = 'images';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: CustomScrollView(
         slivers: <Widget>[
           SliverAppBar(
+            title: MyAppBar(),
             actions: <Widget>[
               //IconButton
               IconButton(
@@ -27,19 +31,16 @@ class _MobileViewState extends State<MobileView> {
                   }), //IconButton
             ],
             floating: true,
-            backgroundColor: Colors.grey[50],
-            expandedHeight: 50,
+            backgroundColor: Colors.grey[100],
+            expandedHeight: 280.0,
             pinned: true,
             flexibleSpace: FlexibleSpaceBar(
-              title: Text(
-                "Karthikha Photography",
-                style: GoogleFonts.sacramento(
-                    //textStyle: TextStyle(letterSpacing: .5),
-                    ),
-              ),
+              background: MyFlexiableAppBar(),
               centerTitle: true,
             ),
           ),
+          SliverList(
+              delegate: SliverChildListDelegate(<Widget>[Text("HIIII")])),
           SliverFillRemaining(
             child: Gallery(
               location: folderName,
